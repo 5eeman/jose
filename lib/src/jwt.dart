@@ -64,22 +64,27 @@ class JsonWebTokenClaims extends JsonObject {
   /// The 'jti' claim can be used to prevent the JWT from being replayed.
   String? get jwtId => this['jti'];
 
-  Iterable<Exception> validate(
-      {Duration expiryTolerance = const Duration(),
-      Uri? issuer,
-      String? clientId}) sync* {
+  Iterable<JoseException> validate({
+    Duration expiryTolerance = const Duration(),
+    Uri? issuer,
+    String? clientId,
+  }) sync* {
     final now = DateTime.now();
     final diff = now.difference(expiry!);
     if (diff > expiryTolerance) {
       yield JoseException(
-          'JWT expired. Expiry ($expiry) is more than tolerance '
-          '($expiryTolerance) before now ($now)');
+        'JWT expired. Expiry ($expiry) is more than tolerance '
+        '($expiryTolerance) before now ($now)',
+      );
     }
     if (issuer != null && this.issuer != issuer) {
-      yield JoseException('Issuer does not match. Expected '
-          '`$issuer`, was `${this.issuer}`');
+      yield JoseException(
+        'Issuer does not match. Expected '
+        '`$issuer`, was `${this.issuer}`',
+      );
     }
-    if (clientId != null && !audience!.contains(clientId)) {
+    final aud = audience;
+    if (clientId != null && (aud == null || !aud.contains(clientId))) {
       yield JoseException('Audiences does not contain clientId `$clientId`.');
     }
   }

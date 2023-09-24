@@ -1,3 +1,6 @@
+## 0.4.3
+ - **fix**: proper error when there is a missing `aud` claim.
+
 ## 0.4.2
  - **feat**: add `sid` to JWT claims.
 
