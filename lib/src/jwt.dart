@@ -1,6 +1,8 @@
 /// [JSON Web Token](https://tools.ietf.org/html/rfc7519)
 library jose.jwt;
 
+import 'package:clock/clock.dart';
+
 import 'jose.dart';
 import 'jwk.dart';
 import 'util.dart';
@@ -69,7 +71,7 @@ class JsonWebTokenClaims extends JsonObject {
     Uri? issuer,
     String? clientId,
   }) sync* {
-    final now = DateTime.now();
+    final now = clock.now();
     final diff = now.difference(expiry!);
     if (diff > expiryTolerance) {
       yield JoseException(

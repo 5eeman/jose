@@ -1,6 +1,7 @@
 /// [JSON Web Key](https://tools.ietf.org/html/rfc7517)
 library jose.jwk;
 
+import 'package:clock/clock.dart';
 import 'dart:async';
 import 'dart:async' as async show runZoned;
 import 'dart:convert';
@@ -598,7 +599,7 @@ class DefaultJsonWebKeySetLoader extends JsonWebKeySetLoader {
       case 'https':
       case 'http':
         var v = _cache[uri];
-        if (v != null && v.key.isAfter(DateTime.now())) {
+        if (v != null && v.key.isAfter(clock.now())) {
           return v.value;
         }
         var r = await _httpClient.get(uri);
@@ -638,6 +639,6 @@ class DefaultJsonWebKeySetLoader extends JsonWebKeySetLoader {
         }
       }
     }
-    return DateTime.now().add(delta);
+    return clock.now().add(delta);
   }
 }
