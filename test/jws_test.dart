@@ -214,6 +214,23 @@ void main() {
           payload);
     });
   });
+
+  group('Issues', () {
+    test('bdaya-dev/jose#4', () async {
+      const jwt =
+          "eyJhbGciOiJFUzI1NiIsImtpZCI6ImRpZDp3ZWI6dGFsYW8uY28ja2V5LTIiLCJ0eXAiOiJKV1QifQ.eyJibG9ja2NoYWluT3B0aW9ucyI6eyJibmJTdXBwb3J0Ijp0cnVlLCJldGhlcmV1bVN1cHBvcnQiOnRydWUsImZhbnRvbVN1cHBvcnQiOnRydWUsImhlZGVyYVN1cHBvcnQiOnRydWUsImluZnVyYUFwaUtleSI6IiIsImluZnVyYVJwY05vZGUiOmZhbHNlLCJwb2x5Z29uU3VwcG9ydCI6dHJ1ZSwidGV6b3NTdXBwb3J0Ijp0cnVlLCJ0enByb0FwaUtleSI6IiIsInR6cHJvUnBjTm9kZSI6ZmFsc2V9LCJleHAiOjE3MDk0Njc1NjAuMCwiZ2VuZXJhbE9wdGlvbnMiOnsiY29tcGFueUxvZ28iOiJodHRwczovL3RhbGFvLmNvL3N0YXRpYy9pbWcvaWNvbi5wbmciLCJjb21wYW55TmFtZSI6Ik9yZ2EiLCJjb21wYW55V2Vic2l0ZSI6Im9yZ2EuZnIiLCJjdXN0b21lclBsYW4iOiJmcmVlIiwicHJvZmlsZU5hbWUiOiJwcm9maWxlIiwicHJvZmlsZVZlcnNpb24iOiIyIiwid2FsbGV0VHlwZSI6ImFsdG1lIn0sImhlbHBDZW50ZXJPcHRpb25zIjp7ImN1c3RvbUNoYXRTdXBwb3J0Ijp0cnVlLCJjdXN0b21DaGF0U3VwcG9ydE5hbWUiOiIiLCJjdXN0b21FbWFpbCI6IiIsImN1c3RvbUVtYWlsU3VwcG9ydCI6ZmFsc2UsImRpc3BsYXlDaGF0U3VwcG9ydCI6dHJ1ZSwiZGlzcGxheUVtYWlsU3VwcG9ydCI6dHJ1ZX0sImlhdCI6MTcwMTY5MTU2MC4wLCJpc3MiOiJkaWQ6d2ViOnRhbGFvLmNvIiwianRpIjoiOGY1OTgyNDYtOTI5ZC0xMWVlLWJkNzQtMGExNjI4OTU4NTYwIiwicHVibGlzaGVkIjoiMjAyMy0xMS0yOCIsInNlbGZTb3ZlcmVpZ25JZGVudGl0eU9wdGlvbnMiOnsiY3VzdG9tT2lkYzR2Y1Byb2ZpbGUiOnsiY2xpZW50QXV0aGVudGljYXRpb24iOiJub25lIiwiY2xpZW50X2lkIjoiIiwiY2xpZW50X3NlY3JldCI6IiIsImNyeXB0b0hvbGRlckJpbmRpbmciOnRydWUsImRlZmF1bHREaWQiOiJkaWQ6a2V5OmVic2kiLCJvaWRjNHZjaURyYWZ0IjoiMTAiLCJvaWRjNHZwRHJhZnQiOiIxMyIsInNjb3BlIjp0cnVlLCJzZWN1cml0eUxldmVsIjoibG93Iiwic2lvcHYyRHJhZnQiOiIxMiIsInN1YmplY3RTeW50YXhlVHlwZSI6ImRpZCIsInVzZXJQaW5EaWdpdHMiOiI2In0sImRpc3BsYXlNYW5hZ2VEZWNlbnRyYWxpemVkSWQiOnRydWUsImRpc3BsYXlTc2lBZHZhbmNlZFNldHRpbmdzIjp0cnVlLCJkaXNwbGF5VmVyaWZpYWJsZURhdGFSZWdpc3RyeSI6dHJ1ZSwib2lkdjR2Y1Byb2ZpbGUiOiJjdXN0b20ifSwic2V0dGluZ3NNZW51Ijp7ImRpc3BsYXlEZXZlbG9wZXJNb2RlIjp0cnVlLCJkaXNwbGF5SGVscENlbnRlciI6dHJ1ZSwiZGlzcGxheVByb2ZpbGUiOnRydWV9LCJ2ZXJzaW9uIjoiMS42Iiwid2FsbGV0U2VjdXJpdHlPcHRpb25zIjp7ImNvbmZpcm1TZWN1cml0eVZlcmlmaWVyQWNjZXNzIjpmYWxzZSwiZGlzcGxheVNlY3VyaXR5QWR2YW5jZWRTZXR0aW5ncyI6dHJ1ZSwic2VjdXJlU2VjdXJpdHlBdXRoZW50aWNhdGlvbldpdGhQaW5Db2RlIjp0cnVlLCJ2ZXJpZnlTZWN1cml0eUlzc3VlcldlYnNpdGVJZGVudGl0eSI6ZmFsc2V9fQ.02QVvroqJfy5A-OajkG54htlAeiU0Q6oWEaFHTCMcDzh73p6dS86L4KznTv6c5NE0z_hh7fM3yWX1eiHGLET2w";
+      const key = {
+        "crv": "P-256",
+        "kty": "EC",
+        "x": "Bls7WaGu_jsharYBAzakvuSERIV_IFR2tS64e5p_Y_Q",
+        "y": "haeKjXQ9uzyK4Ind1W4SBUkR_9udjjx1OmKK4vl1jko"
+      };
+      final jws = JsonWebSignature.fromCompactSerialization(jwt);
+      final keyStore = JsonWebKeyStore()..addKey(JsonWebKey.fromJson(key));
+      final isVerified = await jws.verify(keyStore);
+      expect(isVerified, isTrue);
+    });
+  });
 }
 
 void _doTests(dynamic payload, dynamic key, dynamic encoded,
