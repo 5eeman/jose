@@ -257,7 +257,7 @@ void main() {
       final isVerified = await jws.verify(keyStore);
       expect(isVerified, isTrue);
     });
-    test('appsub-dart/jose#7', () async {
+    test('appsub-dart/jose#57', () async {
       final testData = {
         'payload':
             'eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGF'
