@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-03-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`jose_plus` - `v0.4.5`](#jose_plus---v045)
+
+---
+
+#### `jose_plus` - `v0.4.5`
+
+ - **FIX**: check if the keyIds exist before checking for the keyId mismatch. ([4d5feb5a](https://github.com/appsup-dart/jose/commit/4d5feb5a3d4f0ec35f0be5c7f1442c893f99ff55))
+
+## 0.4.5
+
+ - **FIX**: check if the keyIds exist before checking for the keyId mismatch. ([4d5feb5a](https://github.com/appsup-dart/jose/commit/4d5feb5a3d4f0ec35f0be5c7f1442c893f99ff55))
+
+
 ## 2024-03-19
 
 ### Changes
