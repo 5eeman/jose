@@ -32,14 +32,18 @@ class JsonWebSignature extends JoseObject {
   /// representation
   factory JsonWebSignature.fromJson(Map<String, dynamic> json) {
     Iterable<_JwsRecipient> signatures;
-    if (json.containsKey('signatures')) {
-      signatures = (json['signatures'] as List<Map<String, Object>>)
+    final rawSignatures = json['signatures'] as List<dynamic>?;
+    if (rawSignatures != null) {
+      signatures = rawSignatures
+          .whereType<Map<String, dynamic>>()
           .map((v) => _JwsRecipient.fromJson(v));
     } else {
       signatures = [_JwsRecipient.fromJson(json)];
     }
-    return JsonWebSignature._(decodeBase64EncodedBytes(json['payload']),
-        List.unmodifiable(signatures));
+    return JsonWebSignature._(
+      decodeBase64EncodedBytes(json['payload']),
+      List.unmodifiable(signatures),
+    );
   }
 
   @override

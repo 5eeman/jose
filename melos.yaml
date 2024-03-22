@@ -13,10 +13,8 @@ ide:
 command:
   version:
     linkToCommits: true
+    workspaceChangelog: false
 
 scripts:
   preversion: 
     exec: dart test -j 1
-
-
- 
