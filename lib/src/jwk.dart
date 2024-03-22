@@ -515,7 +515,8 @@ class JsonWebKeyStore {
       return false;
     }
 
-    if (header.keyId != key.keyId) {
+    if ((key.keyId != null && header.keyId != null) &&
+        (header.keyId != key.keyId)) {
       return false;
     }
 
