@@ -1,53 +1,7 @@
-# Change Log
-
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
-## 2024-03-22
-
-### Changes
-
----
-
-Packages with breaking changes:
-
- - There are no breaking changes in this release.
-
-Packages with other changes:
-
- - [`jose_plus` - `v0.4.5`](#jose_plus---v045)
-
----
-
-#### `jose_plus` - `v0.4.5`
-
- - **FIX**: check if the keyIds exist before checking for the keyId mismatch. ([4d5feb5a](https://github.com/appsup-dart/jose/commit/4d5feb5a3d4f0ec35f0be5c7f1442c893f99ff55))
 
 ## 0.4.5
 
  - **FIX**: check if the keyIds exist before checking for the keyId mismatch. ([4d5feb5a](https://github.com/appsup-dart/jose/commit/4d5feb5a3d4f0ec35f0be5c7f1442c893f99ff55))
-
-
-## 2024-03-19
-
-### Changes
-
----
-
-Packages with breaking changes:
-
- - There are no breaking changes in this release.
-
-Packages with other changes:
-
- - [`jose_plus` - `v0.4.4`](#jose_plus---v044)
-
----
-
-#### `jose_plus` - `v0.4.4`
-
- - **FIX**: proper error when there is a missing audience claim. ([05f4db75](https://github.com/appsup-dart/jose/commit/05f4db7523f7106dc8b5c9ce06ddb57f268df062))
- - **FEAT**: use clock package. ([157694d6](https://github.com/appsup-dart/jose/commit/157694d6bdec8ff0b3d6e54eb2341e3471ac4d20))
 
 ## 0.4.4
 
