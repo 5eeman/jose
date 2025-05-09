@@ -9,8 +9,7 @@ import 'dart:convert' as convert;
 import 'dart:typed_data';
 
 import 'package:asn1lib/asn1lib.dart';
-import 'package:collection/collection.dart'
-    show IterableExtension, IterableNullableExtension;
+import 'package:collection/collection.dart' show IterableExtension;
 import 'package:crypto_keys_plus/crypto_keys.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
@@ -442,14 +441,14 @@ class JsonWebKeySet extends JsonObject {
   /// An array of JWK values
   List<JsonWebKey> get keys =>
       getTypedList<JsonWebKey?>('keys', factory: (v) => JsonWebKey.fromJson(v))
-          ?.whereNotNull()
+          ?.nonNulls
           .toList() ??
       const [];
 
   /// Constructs a [JsonWebKeySet] from the list of [keys]
   factory JsonWebKeySet.fromKeys(Iterable<JsonWebKey?> keys) =>
       JsonWebKeySet.fromJson({
-        'keys': keys.map((v) => v?.toJson()).whereNotNull().toList(),
+        'keys': keys.map((v) => v?.toJson()).nonNulls.toList(),
       });
 
   /// Constructs a [JsonWebKeySet] from its JSON representation
