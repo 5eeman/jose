@@ -1,5 +1,5 @@
 ## 0.4.7
-
+ - **DEPS**: Remove dependency on `package:collection`
  - **UPGRADE**: Updated to use crypto_keys_plus 0.5.0 which uses pointycastle 4.0.0.
  - **UPGRADE**: Updated to use x509_plus 0.3.3.
 

@@ -9,7 +9,6 @@ import 'dart:convert' as convert;
 import 'dart:typed_data';
 
 import 'package:asn1lib/asn1lib.dart';
-import 'package:collection/collection.dart' show IterableExtension;
 import 'package:crypto_keys_plus/crypto_keys.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
@@ -406,7 +405,7 @@ class JsonWebKey extends JsonObject {
     if (algorithm != null) return algorithm;
 
     return JsonWebAlgorithm.find(operation: operation, keyType: keyType)
-        .firstWhereOrNull((element) => true)
+        .firstOrNull
         ?.name;
   }
 

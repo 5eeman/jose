@@ -42,8 +42,10 @@ class JsonWebAlgorithm {
             throw UnsupportedError('Algorithm \'$name\' not supported.')));
   }
 
-  static Iterable<JsonWebAlgorithm> find(
-      {String? operation, String? keyType}) sync* {
+  static Iterable<JsonWebAlgorithm> find({
+    String? operation,
+    String? keyType,
+  }) sync* {
     for (var a in allAlgorithms) {
       if (operation != null) {
         if (!a.keyOperations.contains(operation)) continue;
